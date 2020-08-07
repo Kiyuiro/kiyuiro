@@ -19,7 +19,7 @@
       {
         title: "Test",
         img: require("@/assets/img/content/0-0.jpg"),
-        summary: "This is a test text xxxxxxxxxxx x x x x x x x x x x x x x x x x x x x x x x x x",
+        summary: "This is a test text xxxxxxxxxxx x x x x x x",
         time: "2020-7-14",
         link: ""
       },
