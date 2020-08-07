@@ -39,9 +39,15 @@
     transition: all 0.2s linear;
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1150px) {
     #sidebar {
-      width: 150px;
+      width: 160px;
+    }
+  }
+
+  @media screen and (min-width: 1350px) {
+    #sidebar {
+      width: 230px;
     }
   }
 
