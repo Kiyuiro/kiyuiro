@@ -1,13 +1,10 @@
 <template>
   <div id="context">
-    <div id="markdown" v-html="Context">
-    </div>
-    <div id="info"></div>
+    <div id="markdown" v-html="Context"></div>
   </div>
 </template>
 
 <script>
-
   import marked from "@/components/context/marked"
   import data from "@/components/data.js"
 
