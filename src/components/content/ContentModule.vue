@@ -13,7 +13,7 @@
   // 链接跳转
   function JumpLink(path) {
     if (path !== undefined) {
-      this.$router.replace(this.path)
+      this.$router.push(this.path)
     }
   }
 
