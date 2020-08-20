@@ -1,86 +1,26 @@
 <template>
   <div id="content">
-    <content-module v-for="i in data[0]" class="content-module" :path="i.link">
-      <div :style="{'background': 'url(' + i.img + ')', 'background-size': 'cover'}" slot="img" class="img">
+    <page-module v-for="(item, index) in data" class="content-module" :path="'page/' + (index + 1)">
+      <div :style="{'background': 'url(' + item.img + ')', 'background-size': 'cover'}" slot="img" class="img">
         <div class="black"></div>
       </div>
-      <h2 slot="title" class="title">{{i.title}}</h2>
-      <p slot="summary" class="summary">{{i.summary}}</p>
-      <p slot="time" class="time">{{i.time}}</p>
-    </content-module>
+      <h2 slot="title" class="title">{{item.title}}</h2>
+      <p slot="summary" class="summary">{{item.summary}}</p>
+      <p slot="time" class="time">{{item.time}}</p>
+    </page-module>
   </div>
 </template>
 
 <script>
-  import ContentModule from "@/components/content/ContentModule";
-
-  let data = [
-    [
-      {
-        title: "Test",
-        img: require("@/assets/img/content/0-0.jpg"),
-        summary: "This is a test text xxxxxxxxxxx x x x x x x",
-        time: "2020-7-14",
-        link: "page/1"
-      },
-      {
-        title: "Test",
-        img: require("@/assets/img/content/0-1.jpg"),
-        summary: "This is a test text",
-        time: "2020-7-14",
-        link: ""
-      },
-      {
-        title: "Test",
-        img: require("@/assets/img/content/0-2.jpg"),
-        summary: "This is a test text",
-        time: "2020-7-14",
-        link: ""
-      },
-      {
-        title: "Test",
-        img: require("@/assets/img/content/0-3.jpg"),
-        summary: "This is a test text",
-        time: "2020-7-14",
-        link: ""
-      },
-      {
-        title: "Test",
-        img: require("@/assets/img/content/0-4.jpg"),
-        summary: "This is a test text",
-        time: "2020-7-14",
-        link: ""
-      },
-      {
-        title: "Test",
-        img: require("@/assets/img/content/0-5.jpg"),
-        summary: "This is a test text",
-        time: "2020-7-14",
-        link: ""
-      },
-      {
-        title: "Test",
-        img: require("@/assets/img/content/0-6.jpg"),
-        summary: "This is a test text",
-        time: "2020-7-14",
-        link: ""
-      },
-      {
-        title: "Font Awesome",
-        img: require("@/assets/img/content/0-7.jpg"),
-        summary: "一套绝佳的图标字体库和CSS框架",
-        time: "2020-7-17",
-        link: ""
-      },
-    ]
-  ]
+  import PageModule from "@/components/page/PageModule";
+  import data from "@/components/data"
 
   export default {
     name: "Content",
-    components: {ContentModule},
+    components: {PageModule},
     data() {
       return {
-        data: data
+        data,
       }
     },
   }
