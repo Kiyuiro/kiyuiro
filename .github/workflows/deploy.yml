@@ -13,7 +13,7 @@ jobs:
         run: |
           npm install
           npm run build
-          serve
+          servr
         env:
           CI: false
 
