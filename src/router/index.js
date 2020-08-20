@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 
 import Home from "@/views/home/Home";
 import Info from "@/views/info/Info";
-import Context from "@/components/context/Context";
+import Content from "@/components/context/Content";
 
 Vue.use(VueRouter)
 
@@ -18,7 +18,7 @@ const routes = [
   },
   {
     path: "/page/:id",
-    component: Context,
+    component: Content,
   },
   {
     path: "/info",
