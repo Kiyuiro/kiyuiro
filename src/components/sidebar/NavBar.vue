@@ -16,7 +16,7 @@
           <!-- CHILDREN -->
           <ul slot="children">
             <li v-for="j in i.children">
-              <nav-bar-item class="item item-children">
+              <nav-bar-item class="item-children">
                 <a :href="j.link" target="_blank" slot="link">{{j.name}}</a>
               </nav-bar-item>
             </li>
@@ -112,7 +112,6 @@
 
   .item-children a {
     color: #a0a0a5;
-    margin-left: 25px;
   }
 
   .item-children:hover, .item-children:hover a {

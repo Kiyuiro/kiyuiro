@@ -1,20 +1,22 @@
 <template>
-  <div id="nav-bar-item" @click="itemClick(path)">
+  <div id="nav-bar-item" @click="itemClick(path)" >
     <span>
       <slot name="icon"></slot>
       <slot name="link"></slot>
+      <div class="nav-bar-item-arrow">
+        <slot name="arrow"></slot>
+      </div>
     </span>
-    <div class="arrow">
-      <slot name="arrow"></slot>
+    <div class="nav-bar-item-children">
+      <slot name="children"></slot>
     </div>
-    <slot class="children" name="children"></slot>
   </div>
 </template>
 
 <script>
   // 链接跳转
   function itemClick(path) {
-    this.$router.replace(this.path)
+    this.$router.push(this.path)
   }
 
   export default {
@@ -23,7 +25,8 @@
       itemClick
     },
     props: {
-      path: String
+      path: String,
+      isChildren: Boolean
     }
   }
 </script>
@@ -34,24 +37,26 @@
     padding: 0;
   }
 
-  span {
+  #nav-bar-item > span {
     line-height: 40px;
     margin-left: 1.5em;
+    display: block;
+    text-indent: 1px;
   }
 
   span * {
-    margin-right: 0.3em;
+    margin-right: 0.4em;
   }
 
-  .arrow {
+  .nav-bar-item-arrow {
     font-size: 20px;
     float: right;
     margin-right: 1em;
     line-height: 40px;
   }
 
-  .children a{
-    margin-left: 25px;
-    line-height: 40px;
+  .nav-bar-item-children span {
+    padding-left: 1.5em;
   }
+
 </style>
