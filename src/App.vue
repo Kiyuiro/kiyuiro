@@ -17,7 +17,7 @@
     beforeCreate() {
       let xmlHttp;
       xmlHttp = new XMLHttpRequest();
-      xmlHttp.open("POST", " http://localhost:8888/start", true);
+      xmlHttp.open("POST", " http://192.168.1.3:8888/start", true);
       xmlHttp.send();
     }
   }
