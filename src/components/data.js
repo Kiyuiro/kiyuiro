@@ -2,7 +2,7 @@ let data = [
   {
     title: "Test",
     img: require("@/assets/img/page/0-0.jpg"),
-    summary: "    This is a test text x x x x x x",
+    summary: "This is a test text x x x x x x",
     time: "2020-7-14",
     type: "",
     author: "Kiyuiro"

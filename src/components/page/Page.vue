@@ -23,6 +23,14 @@
         data,
       }
     },
+    methods: {
+      fun() {
+        let xmlHttp;
+        xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", "/article?page=1", true);
+        xmlHttp.send();
+      }
+    }
   }
 </script>
 

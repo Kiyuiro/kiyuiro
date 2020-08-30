@@ -7,12 +7,19 @@
 </template>
 
 <script>
+  import "@/assets/js/marked.min";
   import Sidebar from "@/components/sidebar/Sidebar";
   import TopNavigation from "@/components/topNavigation/TopNavigation";
 
   export default {
     name: 'App',
     components: {TopNavigation, Sidebar},
+    beforeCreate() {
+      let xmlHttp;
+      xmlHttp = new XMLHttpRequest();
+      xmlHttp.open("POST", " http://localhost:8888/start", true);
+      xmlHttp.send();
+    }
   }
 </script>
 
