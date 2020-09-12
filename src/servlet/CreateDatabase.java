@@ -39,6 +39,10 @@ public class CreateDatabase extends HttpServlet {
             * 4. 拆分文件名属性
             * 5. 插入数据
             * */
+            ArrayList<String> files = getFiles("../assets/summary");
+            for (int i = 0; i < files.size(); ++i){
+              
+            } 
             for (int i = 0; i < 12; i++) {
                 sql = "insert article(title, author, type, time, `img-path`, `summary-path`) " +
                         "values (\"Test\", \"Kiyuiro\", \"test\", \"2020-7-8\", \"/img/0-" + i + ".jpg\", \"/summary/0-" + i + ".md\");";
@@ -55,7 +59,24 @@ public class CreateDatabase extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
+      
     }
+    
+    public static ArrayList<String> getFiles(String path) {
+        ArrayList<String> files = new ArrayList<String>();
+        File file = new File(path);
+        File[] tempList = file.listFiles();
+    
+        for (int i = 0; i < tempList.length; i++) {
+            if (tempList[i].isFile()) {
+    //              System.out.println("文     件：" + tempList[i]);
+                files.add(tempList[i].toString());
+            }
+            if (tempList[i].isDirectory()) {
+    //              System.out.println("文件夹：" + tempList[i]);
+            }
+        }
+        return files;
+    }
+    
 }
