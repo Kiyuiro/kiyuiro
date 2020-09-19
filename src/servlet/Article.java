@@ -37,7 +37,7 @@ public class Article extends HttpServlet {
             PreparedStatement ps = connection.prepareStatement(sql);
             // 获取数据库返回数据
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
+            while(rs.next()) {
                 // 输出数据库内容
                 int id = rs.getInt("id");
                 String title = rs.getString("title");
